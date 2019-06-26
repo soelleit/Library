@@ -1,0 +1,23 @@
+{
+	"compilerOptions": {
+		"target": "es5",
+		"moduleResolution": "node",
+		"allowJs": true,
+		"noEmit": true,
+		"strict": true,
+		"isolatedModules": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "jsx": "react"
+	},
+	"include": [
+    "app/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "tools",
+    "step-templates",
+    "spec",
+    "build"
+  ]
+}

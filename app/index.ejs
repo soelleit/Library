@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="Content-Type" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="keywords" content=
+  <meta name="google-site-verification" content="178p1fYjib3ehS8pMbiFWuFj_FWUHIFEjU3t7aLi1cs"/>
+
+  <title>Octopus Deploy Library</title>
+
+  <link rel="apple-touch-icon" href="resources/images/Octopus-96x96.png" />
+  <link rel="icon" href="resources/images/Octopus-96x96.png" type="image/x-icon" />
+
+
+  <style>
+    .content {
+      display: flex;
+      align-items: center;
+      height: 100vh;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    .loading {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .loading img {
+      width: 18.75rem;
+      margin-top: 2rem;
+    }
+
+    .fatal-error {
+      background-color: #fbeceb;
+      font-size: 0.875rem;
+      color: #db4437;
+    }
+
+    html {
+      font-size: 100%;
+    }
+
+    body {
+      font-size: 1rem;
+      font-family: "Roboto", Helvetica, Arial, sans-serif;
+      overflow: auto;
+      margin: 0;
+      padding: 0;
+      background: #fafafa;
+      letter-spacing: 0.25px;
+      line-height: 1.25rem;
+    }
+
+    @-webkit-keyframes fa-spin {
+      0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+      }
+
+      100% {
+        -webkit-transform: rotate(359deg);
+        transform: rotate(359deg);
+      }
+    }
+
+    @keyframes fa-spin {
+      0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+      }
+
+      100% {
+        -webkit-transform: rotate(359deg);
+        transform: rotate(359deg);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    <div class="content">
+      <div class="loading">
+        <div class="text-center">Loading, please wait...</div>
+        <img src="resources/images/loading-image.svg" alt="Octopus Deploy" width="300" height="111.63" />
+      </div>
+
+      <noscript>
+        <div class="fatal-error">
+          <strong>JavaScript must be enabled</strong>
+          <p>
+            You must enable JavaScript in your browser for Octopus Deploy to work.
+            Here are the <a href="http://www.enable-javascript.com/" target="_blank">
+              instructions how to enable JavaScript in your web browser</a>.
+          </p>
+        </div>
+      </noscript>
+
+      <!--[if lte IE 8]>
+        <div class="fatal-error">
+          <strong>Unsupported browser</strong>
+          <p>
+            Internet Explorer versions 8 and lower are no longer supported by Octopus Deploy. For the best experience,
+            consider upgrading to the latest version of Internet Explorer or using an alternative browser such as Google
+            Chrome or Mozilla Firefox.
+          </p>
+        </div>
+        <![endif]-->
+    </div>
+  </div>
+</body>
+
+</html>

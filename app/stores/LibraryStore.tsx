@@ -1,7 +1,7 @@
 'use strict';
 
 import {EventEmitter} from 'events';
-import _ from 'underscore';
+import _ from 'lodash';
 import SlugMaker from './../services/SlugMaker';
 import AppDispatcher from './../dispatcher.js';
 

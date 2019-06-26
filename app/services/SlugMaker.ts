@@ -1,7 +1,7 @@
 'use strict';
 
 class SlugMaker {
-  make(name) {
+  make(name: string) {
     return "actiontemplate" + '-' + name.replace(/ \- /g, '-').replace(/ /g, '-').toLowerCase();
   }
 }

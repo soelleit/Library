@@ -1,7 +1,7 @@
 'use strict';
 
 import React from 'react';
-import {Router, IndexRedirect, Route} from 'react-router/umd/ReactRouter';
+import {Router, Route, Redirect} from 'react-router-dom';
 
 import App from './components/App';
 import Listing from './components/Listing';
@@ -11,7 +11,7 @@ let routes = (
   <Route component={App}
       path="/"
   >
-    <IndexRedirect to="listing" />
+    <Redirect to="listing" />
     <Route component={Listing}
         path="listing(/:searchTerm)"
     />

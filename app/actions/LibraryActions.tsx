@@ -3,7 +3,7 @@
 import AppDispatcher from './../dispatcher.js';
 
 const LibraryActions = {
-  sendTemplates(templates, callback) {
+  sendTemplates(templates: any, callback: any) {
     AppDispatcher.dispatch({
       actionType: 'READ_SUCCESS',
       templates: templates

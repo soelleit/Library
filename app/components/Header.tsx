@@ -1,9 +1,5 @@
-'use strict';
-
-import React from 'react';
-import {Link} from 'react-router';
-
-const displayName = 'octopus-library-header';
+import * as React from 'react';
+import { Link } from 'react-router-dom'
 
 export default class Header extends React.Component {
   render() {
@@ -19,6 +15,6 @@ export default class Header extends React.Component {
       </header>
     );
   }
-}
 
-Header.displayName = displayName;
+  static displayName = "octopus-library-header"
+}

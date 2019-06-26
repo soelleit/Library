@@ -2,13 +2,15 @@
 
 import React from 'react';
 import moment from 'moment';
-import {Link} from 'react-router';
-import SlugMaker from './../services/SlugMaker';
-import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
+import SlugMaker from '../services/SlugMaker';
 
-const displayName = 'octopus-library-template-list';
+interface TemplateListProps {
+  filterText: string;
+  templateList: any[];
+}
 
-export default class TemplateList extends React.Component {
+export default class TemplateList extends React.Component<TemplateListProps> {
   render() {
     let templateList = this.props.templateList.map((item, index) => {
       let lc = this.props.filterText.toLowerCase();
@@ -45,16 +47,10 @@ export default class TemplateList extends React.Component {
       </div>
     );
   }
+
+  static displayName = "octopus-library-template-list"
+  static defaultProps = {
+    filterText: '',
+    templateList: []
+  }
 }
-
-TemplateList.propTypes = {
-  filterText: PropTypes.string,
-  templateList: PropTypes.array
-};
-
-TemplateList.defaultProps = {
-  filterText: '',
-  templateList: []
-};
-
-TemplateList.displayName = displayName;

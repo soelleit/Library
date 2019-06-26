@@ -1,8 +1,4 @@
-'use strict';
-
-import React from 'react';
-
-const displayName = 'octopus-library-footer';
+import * as React from "react";
 
 export default class Footer extends React.Component {
   render() {
@@ -13,7 +9,7 @@ export default class Footer extends React.Component {
             <p>The Octopus Deploy Library is a way for users of <a href="https://octopus.com">Octopus Deploy</a> to share useful code.</p>
             <p>
               Need help? Feel free to contact the team via our&nbsp;
-              <a href="https://help.octopus.com/" 
+              <a href="https://help.octopus.com/"
                   target="_blank"
               >support forum
               </a>.
@@ -29,6 +25,5 @@ export default class Footer extends React.Component {
       </footer>
     );
   }
+  static displayName = "octopus-library-footer"
 }
-
-Footer.displayName = displayName;
