@@ -1,0 +1,37 @@
+{
+  "Id": "ActionTemplates-263",
+  "Name": "Install Powershell Module",
+  "Description": "Install Powershell Modules",
+  "ActionType": "Octopus.Script",
+  "Version": 9,
+  "CommunityActionTemplateId": null,
+  "Packages": [],
+  "Properties": {
+    "Octopus.Action.Script.ScriptSource": "Inline",
+    "Octopus.Action.Script.Syntax": "PowerShell",
+    "Octopus.Action.Script.ScriptBody": "if(-not (Find-Module $ModuleName -ErrorAction SilentlyContinue)){\n    throw \"No Module Found by that name?\"        \n}else{\n    $OnlineModule=Find-Module $ModuleName -ErrorAction SilentlyContinue\n}\n\nif (-not (Get-InstalledModule -Name $ModuleName -ErrorAction SilentlyContinue)){    \n    Write-Output \"Installing Powershell Module: $ModuleName\"\n    Install-PackageProvider -Name NuGet -Force -Confirm:$false \n    Install-Module -Name $ModuleName -Force -SkipPublisherCheck -AllowClobber -Confirm:$false \n}else{\n    $InstalledModule=Get-InstalledModule -Name $ModuleName -ErrorAction SilentlyContinue\n}\n\n\nif(-not ($OnlineModule.Version -ge $InstalledModule)){\n    If($AllowUpgrade){\n        Write-Output \"Updating Powershell Module: $ModuleName\"\n        Update-Module -Name $Module -Force -Confirm:$false \n        \n    }        \n\n}"
+  },
+  "Parameters": [
+    {
+      "Id": "8c76f6f2-d772-4759-88f3-9bfca9bab9ad",
+      "Name": "ModuleName",
+      "Label": "ModuleName",
+      "HelpText": "Specify the name of the module you want installed.",
+      "DefaultValue": "",
+      "DisplaySettings": {}
+    },
+    {
+      "Id": "a03c8235-ac70-43f1-aabe-9567658958a2",
+      "Name": "$AllowUpgrade",
+      "Label": "Allows upgrade of Module",
+      "HelpText": "bool / $true or $false",
+      "DefaultValue": "",
+      "DisplaySettings": {}
+    }
+  ],
+  "$Meta": {
+    "ExportedAt": "2019-12-05T09:05:52.655Z",
+    "OctopusVersion": "2018.10.0",
+    "Type": "ActionTemplate"
+  }
+}
